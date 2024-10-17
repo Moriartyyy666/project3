@@ -25,7 +25,7 @@ Route::post('/login-proses', [LoginController::class, 'proses'])->name('login.pr
 
 Route::middleware(['auth'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin');
-
+Route::get('produk', [AdminController::class,'produk'])->name('produk');
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
