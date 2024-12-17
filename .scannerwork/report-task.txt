@@ -2,5 +2,5 @@ projectKey=Lals_Store
 serverUrl=http://localhost:9000
 serverVersion=10.7.0.96327
 dashboardUrl=http://localhost:9000/dashboard?id=Lals_Store
-ceTaskId=4f8f1a7f-4567-4649-b41c-2e0cdcaf970c
-ceTaskUrl=http://localhost:9000/api/ce/task?id=4f8f1a7f-4567-4649-b41c-2e0cdcaf970c
+ceTaskId=824ead83-40bf-4ee3-b55f-1c537bf40101
+ceTaskUrl=http://localhost:9000/api/ce/task?id=824ead83-40bf-4ee3-b55f-1c537bf40101

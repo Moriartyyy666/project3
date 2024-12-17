@@ -16,33 +16,48 @@ class LoginController extends Controller
 
     public function proses(Request $request)
     {
-        // dd($request->all());
-
-        $request->validate([
-            'email' => 'required|string',
+        // Validasi input
+        $validatedData = $request->validate([
+            'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
 
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication passed
             $user = Auth::user();
 
-            // Redirect based on user role
-            if ($user->role_id == Role::ADMIN) {
-                return redirect()->route('admin');
-            } elseif ($user->role_id == Role::CUSTOMER) {
-                return redirect()->route('dashboard');
-            }
+            // Redirect berdasarkan peran pengguna
+            return redirect()->route($user->getRedirectRoute());
         }
 
-        return back()->with('error', 'Gagal melakukan autentikasi');
+        // Umpan balik kegagalan autentikasi
+        return back()->withErrors([
+            'email' => 'Email atau kata sandi salah.',
+        ]);
     }
 
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
+    }
+}
+
+// Tambahan di Model User
+namespace App\Models;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    public function getRedirectRoute()
+    {
+        $routes = [
+            Role::ADMIN => 'admin',
+            Role::CUSTOMER => 'dashboard',
+        ];
+
+        return $routes[$this->role_id] ?? 'login';
     }
 }
