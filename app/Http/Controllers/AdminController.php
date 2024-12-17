@@ -24,81 +24,69 @@ class AdminController extends Controller
     }
 
     public function produkEdit($id)
-{
-    $produk = Produk::with('harga')->findOrFail($id); // Mengambil produk beserta harga terkait
-    $kategoris = Kategori::all(); // Untuk dropdown kategori
-    return view('admin.produk.edit', compact('produk', 'kategoris'));
-}
-
-public function produkUpdate(Request $request, $id)
-{
-    $produk = Produk::findOrFail($id);
-
-    // Validasi input
-    $request->validate([
-        'nama_produk' => 'required|string',
-        'foto' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
-        'deskripsi' => 'required|string',
-        'kategori_id' => 'required|exists:kategoris,id',
-        'harga.*' => 'required|integer',
-        'durasi.*' => 'required|string',
-    ]);
-
-    // Update data produk
-    $produk->update([
-        'nama_produk' => $request->nama_produk,
-        'deskripsi' => $request->deskripsi,
-        'kategori_id' => $request->kategori_id,
-    ]);
-
-    // Jika ada file foto baru, ganti foto lama
-    if ($request->hasFile('foto')) {
-        $image = $request->file('foto')->move('foto_produk', time() . '_' . $request->file('foto')->getClientOriginalName());
-        $produk->update(['foto' => $image]);
+    {
+        $produk = Produk::with('harga')->findOrFail($id); // Mengambil produk beserta harga terkait
+        $kategoris = Kategori::all(); // Untuk dropdown kategori
+        return view('admin.produk.edit', compact('produk', 'kategoris'));
     }
 
-    // Hapus harga lama
-    $produk->harga()->delete();
+    public function produkUpdate(Request $request, $id)
+    {
+        $produk = Produk::findOrFail($id);
 
-    // Simpan harga baru
-    foreach ($request->harga as $index => $harga) {
-        Harga::create([
-            'produk_id' => $produk->id,
-            'harga' => $harga,
-            'durasi' => $request->durasi[$index],
+        // Validasi input
+        $rules = 'required|string';
+        $validatedData = $request->validate([
+            'nama_produk' => $rules,
+            'foto' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+            'deskripsi' => $rules,
+            'kategori_id' => 'required|exists:kategoris,id',
+            'harga.*' => 'required|integer',
+            'durasi.*' => $rules,
         ]);
+
+        // Update data produk
+        $produk->update([
+            'nama_produk' => $validatedData['nama_produk'],
+            'deskripsi' => $validatedData['deskripsi'],
+            'kategori_id' => $validatedData['kategori_id'],
+        ]);
+
+        // Jika ada file foto baru, ganti foto lama
+        if ($request->hasFile('foto')) {
+            $image = $this->uploadFoto($request->file('foto'));
+            $produk->update(['foto' => $image]);
+        }
+
+        // Hapus harga lama dan simpan harga baru
+        $produk->harga()->delete();
+        $this->storeHarga($request->harga, $request->durasi, $produk->id);
+
+        return redirect()->route('produk')->with('success', 'Produk berhasil diperbarui!');
     }
-
-    return redirect()->route('produk')->with('success', 'Produk berhasil diperbarui!');
-}
-
 
     public function produkStore(Request $request)
     {
-        $request->validate([
-            'nama_produk' => 'required|string',
+        $rules = 'required|string';
+        $validatedData = $request->validate([
+            'nama_produk' => $rules,
             'foto' => 'required|image|mimes:png,jpg,jpeg|max:2048',
-            'deskripsi' => 'required|string',
+            'deskripsi' => $rules,
+            'kategori_id' => 'required|exists:kategoris,id',
             'harga.*' => 'required|integer',
-            'durasi.*' => 'required|string',
+            'durasi.*' => $rules,
         ]);
 
-        $image = $request->file('foto')->move('foto_produk', time() . '_' . $request->file('foto')->getClientOriginalName());
+        $image = $this->uploadFoto($request->file('foto'));
 
         $produk = Produk::create([
-            'nama_produk' => $request->nama_produk,
+            'nama_produk' => $validatedData['nama_produk'],
             'foto' => $image,
-            'deskripsi' => $request->deskripsi,
-            'kategori_id' => $request->kategori_id
+            'deskripsi' => $validatedData['deskripsi'],
+            'kategori_id' => $validatedData['kategori_id'],
         ]);
 
-        foreach ($request->harga as $index => $harga) {
-            Harga::create([
-                'produk_id' => $produk->id,
-                'harga' => $harga,
-                'durasi' => $request->durasi[$index]
-            ]);
-        }
+        $this->storeHarga($request->harga, $request->durasi, $produk->id);
 
         return redirect()->route('produk')->with('success', 'Produk berhasil ditambahkan!');
     }
@@ -108,5 +96,21 @@ public function produkUpdate(Request $request, $id)
         $produk->delete();
 
         return redirect()->route('produk')->with('success', 'Produk berhasil dihapus!');
+    }
+
+    private function uploadFoto($foto)
+    {
+        return $foto->move('foto_produk', time() . '_' . $foto->getClientOriginalName());
+    }
+
+    private function storeHarga(array $hargaList, array $durasiList, int $produkId)
+    {
+        foreach ($hargaList as $index => $harga) {
+            Harga::create([
+                'produk_id' => $produkId,
+                'harga' => $harga,
+                'durasi' => $durasiList[$index],
+            ]);
+        }
     }
 }
