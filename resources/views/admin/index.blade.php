@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet" />
     <title>Admin</title>
@@ -34,24 +36,24 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('produk') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-box"></i>
                     <span>Produk</span></a>
             </li>
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider"> --}}
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            {{-- <div class="sidebar-heading">
                 Interface
-            </div>
+            </div> --}}
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -64,10 +66,10 @@
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -83,18 +85,18 @@
                         <a class="collapse-item" href="utilities-other.html">Other</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{-- <hr class="sidebar-divider"> --}}
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            {{-- <div class="sidebar-heading">
                 Addons
-            </div>
+            </div> --}}
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -113,21 +115,21 @@
                         <a class="collapse-item active" href="blank.html">Blank Page</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
-            </li>
+            </li> --}}
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -193,7 +195,9 @@
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

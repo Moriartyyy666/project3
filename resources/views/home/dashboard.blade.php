@@ -2,9 +2,9 @@
 @section('content')
     <!-- Header-->
     <header class="py-5 d-flex align-items-center position-relative" id="beranda"
-        style="min-height: 100vh; background-image: url('{{ asset('img/bglanding.jpg') }}'); background-size: cover; background-position: center;">
+        style="min-height: 100vh; background-image: url('{{ asset('img/bglanding.png') }}'); background-size: cover; background-position: center;">
         <div class="overlay"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px);">
         </div>
         <div class="container px-5 position-relative" style="z-index: 1;">
             <div class="row gx-5 justify-content-center">
@@ -14,8 +14,8 @@
                         <p class="lead text-white mb-4">Toko online yang menjual produk digital untuk berbagai
                             layanan digital</p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#desk">Get Started</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="#learnmore">Learn More</a>
+                            {{-- <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#desk">Informasi</a> --}}
+                            {{-- <a class="btn btn-outline-light btn-lg px-4" href="#desk">Informasi</a> --}}
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
         </div>
     </header>
     <!-- Features section-->
-    <section class="py-5 border-bottom" id="desk">
+    <section class="py-5 border-bottom" id="informasi">
         <div class="container px-5 my-5">
             <div class="accordion" id="accordionExample">
                 <!-- Netflix -->
@@ -218,160 +218,46 @@
     </section>
 
     <!-- Pricing section-->
-    <section class="bg-light py-5 border-bottom" id="kategori">
+    <section class="bg-light py-5 border-bottom" id="produk">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h2 class="fw-bolder">Pay as you grow</h2>
-                <p class="lead mb-0">With our no hassle pricing plans</p>
+                <h2 class="fw-bolder">Berlangganan Produk Digital</h2>
             </div>
-            <div class="row gx-5 justify-content-center">
-                <!-- Pricing card free-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Free</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$0</span>
-                                <span class="text-muted">/ mo.</span>
+            <div class="row gx-5">
+                <!-- PRODUK-->
+                @foreach ($produk as $item)
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body">
+                                <div class="d-flex aligh-items-center">
+                                    <div class="d-flex">
+                                        <img src="{{ asset($item->foto) }}" class="card-img-top" style="width: 27%"
+                                            alt="{{ $item->foto }}">
+                                        <p class="fs-6">{{ $item->nama_produk }}</p>
+
+                                    </div>
+                                    <div>
+                                        {{ $item->kategori->name }}
+                                    </div>
+                                </div>
+                                <hr />
+                                <div>
+                                    {{-- <span>{{ $item->deskripsi }}</span> --}}
+                                    @foreach ($item->harga as $hargas)
+                                        <p>
+                                            Rp.{{ number_format($hargas->harga, 0, ',', '.') }} /
+                                            {{ $hargas->durasi }}
+                                        </p>
+                                    @endforeach
+                                </div>
                             </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>1 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2 text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a>
+                            <div class="card-footer">
+                                <a href="{{ route('dashboard.produk', ['nama_produk' => $item->nama_produk]) }}"
+                                    class="block w-full btn btn-success">Pesan</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Pricing card pro-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card mb-5 mb-xl-0">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                Pro
-                            </div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$9</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>5 users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Free linked domain
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-x"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pricing card enterprise-->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="card">
-                        <div class="card-body p-5">
-                            <div class="small text-uppercase fw-bold text-muted">Enterprise</div>
-                            <div class="mb-3">
-                                <span class="display-4 fw-bold">$49</span>
-                                <span class="text-muted">/ mo.</span>
-                            </div>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited users</strong>
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    5GB storage
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited public projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Community access
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Unlimited private projects
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Dedicated support
-                                </li>
-                                <li class="mb-2">
-                                    <i class="bi bi-check text-primary"></i>
-                                    <strong>Unlimited</strong>
-                                    linked domains
-                                </li>
-                                <li class="text-muted">
-                                    <i class="bi bi-check text-primary"></i>
-                                    Monthly status reports
-                                </li>
-                            </ul>
-                            <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

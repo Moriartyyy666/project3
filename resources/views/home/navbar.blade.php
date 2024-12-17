@@ -1,9 +1,8 @@
-<!-- Responsive navbar-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #c5769f;">
+<!-- Responsive navbar -->
+<nav class="fixed-top navbar navbar-expand-lg navbar-light" style="background-color: #c5769f;">
     <div class="container">
         <a class="navbar-brand" href="#beranda">
-            <img src="{{ asset('img/logo-lalsstore.png') }}" alt="Logo"
-                class="navbar-logo d-inline-block align-text-top">
+            <img src="{{ asset('img/logo-lalsstore.png') }}" alt="Logo"  width="50" height="50">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,28 +11,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#beranda"
-                        style="color: rgb(255, 255, 255);">Beranda</a>
+                    <a class="nav-link active" aria-current="page" href="#beranda" style="color: #fff;">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#kategori" style="color: white;">Kategori</a>
+                    <a class="nav-link active" href="#informasi" style="color: #fff;">Informasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#informasi" style="color: white;">Informasi</a>
+                    <a class="nav-link active" href="#produk" style="color: #fff;">Produk</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#kontak" style="color: white;">Kontak</a>
+                    <a class="nav-link active" href="#kontak" style="color: #fff;">Kontak</a>
                 </li>
                 @if (Route::has('login'))
                     @auth
                         <li class="nav-item">
-                            <a class="btn btn-primary nav-link" href="{{ route('logout') }}"
-                                style="color: white;">Logout</a>
+                            <a class="nav-link text-white" href="{{ route('logout') }}">Logout</a>
                         </li>
                     @else
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
+                        </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="btn btn-primary nav-link" href="" style="color: white;">Register</a>
+                                <a class="nav-link text-white" href="{{ route('register') }}">Register</a>
                             </li>
                         @endif
                     @endauth
