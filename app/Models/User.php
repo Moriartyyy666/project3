@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,14 +14,22 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
+     * These attributes can be assigned during model instantiation.
+     *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role_id'
+        self::COLUMN_NAME,
+        self::COLUMN_EMAIL,
+        self::COLUMN_PASSWORD,
+        self::COLUMN_ROLE_ID,
     ];
+
+    // Define constants for table columns
+    public const COLUMN_NAME = 'name';
+    public const COLUMN_EMAIL = 'email';
+    public const COLUMN_PASSWORD = 'password';
+    public const COLUMN_ROLE_ID = 'role_id';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,7 +50,12 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function getAkses()
+    /**
+     * Define a relationship with the Role model.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
