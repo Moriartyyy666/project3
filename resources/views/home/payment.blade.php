@@ -5,7 +5,7 @@
         <h3>Proses Pembayaran</h3>
         <p>Order ID: {{ $transaksi->order_id }}</p>
         <p>Total:
-            Rp.{{ number_format($transaksi->produk->sum('harga'), 0, ',', '.') }}
+            Rp.{{ number_format($transaksi->produk->harga->sum('harga'), 0, ',', '.') }}
         </p>
         <button id="pay-button" class="btn btn-primary">Bayar Sekarang</button>
 

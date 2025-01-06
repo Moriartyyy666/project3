@@ -27,4 +27,9 @@ class Transaksi extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function harga()
+    {
+        return $this->hasOne(Harga::class, 'produk_id', 'produk_id');
+    }
 }

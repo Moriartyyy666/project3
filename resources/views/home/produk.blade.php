@@ -12,10 +12,10 @@
                     <div class="card" style="width: 20rem;">
                         <div class="card-body">
                             <h5 class="card-title">Detail Produk</h5>
-                            <h8>Deskripsi:</h8>
-                            <p>{{ $view->deskripsi }}</p>
-                            <h8>Kategori:</h8>
-                            <p>{{ $view->kategori->name }}</p>
+                            <h8><i>Deskripsi:</i></h8>
+                            <p><b>{{ $view->deskripsi }}</b></p>
+                            <h8><i>Kategori:</i></h8>
+                            <p><b>{{ $view->kategori->name }}</b></p>
                         </div>
                     </div>
                 </div>

@@ -18,10 +18,11 @@ class HomeController extends Controller
         return view('home.dashboard', compact('produk'));
     }
 
-    public function produk($nama_produk, $id)
+    public function produk($nama_produk)
     {
         $view = Produk::where('nama_produk', $nama_produk)->firstOrFail();
-        $transaksi = Transaksi::with('produk')->find($id);
+        $transaksi = Transaksi::with(['produk', 'produk.harga'])->find($view->id);
+
         return view('home.produk', compact('view', 'transaksi'));
     }
 
@@ -48,7 +49,7 @@ class HomeController extends Controller
             'user_id' => $user,
             'produk_id' => $produk_id,
             'order_id' => uniqid('ORDER-'),
-            'status' => 'pending',
+            'status' => 'success',
             'durasi' => $durasi,
         ]);
 

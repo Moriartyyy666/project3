@@ -21,6 +21,7 @@
                 </div>
             </div>
         </div>
+
     </header>
     <!-- Features section-->
     <section class="py-5 border-bottom" id="informasi">
@@ -31,7 +32,7 @@
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/netflixlogo.png') }}" alt="Netflix Logo" width="40"
                                     height="40">
@@ -43,9 +44,9 @@
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>Netflix adalah layanan streaming berbasis langganan yang menyediakan berbagai film, acara
-                                televisi, dokumenter, dan konten orisinal. Didirikan pada tahun 1997 oleh Reed Hastings
-                                dan Marc Randolph, Netflix awalnya beroperasi sebagai layanan penyewaan DVD melalui pos
-                                sebelum beralih ke streaming digital pada tahun 2007.</p>
+                                televisi, dokumenter, dan konten orisinal. Didirikan pada tahun 1997 oleh Reed Hastings dan
+                                Marc Randolph, Netflix awalnya beroperasi sebagai layanan penyewaan DVD melalui pos sebelum
+                                beralih ke streaming digital pada tahun 2007.</p>
                         </div>
                     </div>
                 </div>
@@ -54,7 +55,7 @@
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/viulogo.jpg') }}" alt="Viu Logo" width="40" height="40">
                             </div>
@@ -64,11 +65,10 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Viu adalah platform streaming video yang menawarkan berbagai konten, termasuk drama,
-                                film, dan acara televisi, dengan fokus pada konten Asia, terutama dari Korea, Jepang,
-                                dan Tiongkok. Didirikan oleh Viu International pada tahun 2015, platform ini menyediakan
-                                layanan berbasis langganan yang memungkinkan pengguna menonton konten secara on-demand.
-                            </p>
+                            <p>Viu adalah platform streaming video yang menawarkan berbagai konten, termasuk drama, film,
+                                dan acara televisi, dengan fokus pada konten Asia, terutama dari Korea, Jepang, dan
+                                Tiongkok. Didirikan oleh Viu International pada tahun 2015, platform ini menyediakan layanan
+                                berbasis langganan yang memungkinkan pengguna menonton konten secara on-demand.</p>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/spotifylogo.png') }}" alt="Spotify Logo" width="40"
                                     height="40">
@@ -88,11 +88,10 @@
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Spotify adalah platform streaming musik, podcast, dan konten audio digital yang
-                                memungkinkan pengguna mengakses jutaan lagu dan episode dari berbagai genre dan
-                                kategori. Diluncurkan pada tahun 2008, Spotify menyediakan layanan berlangganan gratis
-                                dengan iklan atau premium tanpa iklan, serta fitur offline dan kualitas suara lebih
-                                tinggi.</p>
+                            <p>Spotify adalah platform streaming musik, podcast, dan konten audio digital yang memungkinkan
+                                pengguna mengakses jutaan lagu dan episode dari berbagai genre dan kategori. Diluncurkan
+                                pada tahun 2008, Spotify menyediakan layanan berlangganan gratis dengan iklan atau premium
+                                tanpa iklan, serta fitur offline dan kualitas suara lebih tinggi.</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +100,7 @@
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/canvalogo.png') }}" alt="Canva Logo" width="38" height="38">
                             </div>
@@ -111,11 +110,11 @@
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>Canva adalah platform desain grafis berbasis web yang memungkinkan pengguna membuat
-                                berbagai jenis desain, seperti poster, presentasi, dan konten media sosial, dengan
-                                mudah. Dikenal karena antarmukanya yang intuitif dan koleksi template yang beragam,
-                                Canva memudahkan pengguna, baik pemula maupun profesional, untuk menghasilkan desain
-                                yang menarik tanpa memerlukan keterampilan desain yang mendalam.</p>
+                            <p>Canva adalah platform desain grafis berbasis web yang memungkinkan pengguna membuat berbagai
+                                jenis desain, seperti poster, presentasi, dan konten media sosial, dengan mudah. Dikenal
+                                karena antarmukanya yang intuitif dan koleksi template yang beragam, Canva memudahkan
+                                pengguna, baik pemula maupun profesional, untuk menghasilkan desain yang menarik tanpa
+                                memerlukan keterampilan desain yang mendalam.</p>
                         </div>
                     </div>
                 </div>
@@ -124,7 +123,7 @@
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/picsartlogo.png') }}" alt="Picsart Logo" width="37"
                                     height="37">
@@ -135,10 +134,10 @@
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <p>PicsArt adalah aplikasi pengeditan foto dan video yang memungkinkan pengguna untuk
-                                menerapkan berbagai efek, filter, dan teks pada gambar. Dikenal dengan fitur kolase dan
-                                alat menggambar, PicsArt juga menyediakan platform komunitas untuk berbagi kreasi dan
-                                menemukan inspirasi dari pengguna lain di seluruh dunia.</p>
+                            <p>PicsArt adalah aplikasi pengeditan foto dan video yang memungkinkan pengguna untuk menerapkan
+                                berbagai efek, filter, dan teks pada gambar. Dikenal dengan fitur kolase dan alat
+                                menggambar, PicsArt juga menyediakan platform komunitas untuk berbagi kreasi dan menemukan
+                                inspirasi dari pengguna lain di seluruh dunia.</p>
                         </div>
                     </div>
                 </div>
@@ -147,10 +146,9 @@
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
-                                <img src="{{ asset('img/vscologo.png') }}" alt="VSCO Logo" width="40"
-                                    height="40">
+                                <img src="{{ asset('img/vscologo.png') }}" alt="VSCO Logo" width="40" height="40">
                             </div>
                             <h2 class="h4 fw-bolder mb-0">VSCO</h2>
                         </button>
@@ -170,7 +168,7 @@
                     <h2 class="accordion-header" id="headingSeven">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/zoomlogo.png') }}" alt="Zoom Logo" width="49"
                                     height="49">
@@ -182,10 +180,10 @@
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>Zoom adalah platform konferensi video berbasis cloud yang memungkinkan pengguna melakukan
-                                pertemuan virtual, webinar, dan panggilan video dengan fitur berbagi layar, obrolan,
-                                serta perekaman. Zoom populer untuk keperluan bisnis, pendidikan, dan komunikasi jarak
-                                jauh, karena kemudahan penggunaannya dan kemampuan untuk mengakomodasi banyak peserta
-                                dalam satu sesi.</p>
+                                pertemuan virtual, webinar, dan panggilan video dengan fitur berbagi layar, obrolan, serta
+                                perekaman. Zoom populer untuk keperluan bisnis, pendidikan, dan komunikasi jarak jauh,
+                                karena kemudahan penggunaannya dan kemampuan untuk mengakomodasi banyak peserta dalam satu
+                                sesi.</p>
                         </div>
                     </div>
                 </div>
@@ -194,7 +192,7 @@
                     <h2 class="accordion-header" id="headingEight">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                            <div class="feature bg-gradient text-white rounded-3 me-3"
+                            <div class="feature bg-gradient text-white rounded-3 me-3 d-flex align-items-center justify-content-center"
                                 style="background-color: #e48dba; width: 55px; height: 55px;">
                                 <img src="{{ asset('img/chatgptlogo.png') }}" alt="ChatGPT Logo" width="39"
                                     height="39">
@@ -206,15 +204,13 @@
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p>ChatGPT adalah platform kecerdasan buatan yang dikembangkan oleh OpenAI, memungkinkan
-                                pengguna berinteraksi dengan model bahasa untuk menjawab pertanyaan, memberikan saran,
-                                atau melakukan percakapan. ChatGPT dapat digunakan untuk berbagai keperluan, seperti
-                                pembuatan konten, bantuan teknis, dan diskusi umum, dengan kemampuan untuk memahami dan
-                                menghasilkan teks yang alami dan kontekstual.</p>
+                                pengguna berinteraksi dengan model bahasa untuk menjawab pertanyaan, memberikan saran, atau
+                                melakukan percakapan. ChatGPT dapat digunakan untuk berbagai keperluan, seperti pembuatan
+                                konten, bantuan teknis, dan diskusi umum, dengan kemampuan untuk memahami dan menghasilkan
+                                teks yang alami dan kontekstual.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </section>
 
     <!-- Pricing section-->
@@ -223,26 +219,21 @@
             <div class="text-center mb-5">
                 <h2 class="fw-bolder">Berlangganan Produk Digital</h2>
             </div>
-            <div class="row gx-5">
-                <!-- PRODUK-->
+            <div class="row gx-5 gy-5"> <!-- Menambahkan gy-5 untuk jarak antar baris -->
+                <!-- PRODUK -->
                 @foreach ($produk as $item)
                     <div class="col-lg-6 col-xl-3">
                         <div class="card mb-5 mb-xl-0">
                             <div class="card-body">
-                                <div class="d-flex aligh-items-center">
-                                    <div class="d-flex">
-                                        <img src="{{ asset($item->foto) }}" class="card-img-top" style="width: 27%"
-                                            alt="{{ $item->foto }}">
-                                        <p class="fs-6">{{ $item->nama_produk }}</p>
-
-                                    </div>
-                                    <div>
-                                        {{ $item->kategori->name }}
+                                <div class="d-flex align-items-start"> <!-- Atur logo dan teks secara horizontal -->
+                                    <img src="{{ asset($item->foto) }}" class="me-3" style="width: 20%;" alt="{{ $item->foto }}"> <!-- Tambahkan margin kanan -->
+                                    <div class="flex-column"> <!-- Teks diatur vertikal -->
+                                        <p class="fs-6 fw-bold mb-1">{{ $item->nama_produk }}</p> <!-- Nama produk tebal -->
+                                        <p class="text-muted fst-italic mb-0">{{ $item->kategori->name }}</p> <!-- Kategori miring -->
                                     </div>
                                 </div>
                                 <hr />
                                 <div>
-                                    {{-- <span>{{ $item->deskripsi }}</span> --}}
                                     @foreach ($item->harga as $hargas)
                                         <p>
                                             Rp.{{ number_format($hargas->harga, 0, ',', '.') }} /
@@ -261,7 +252,8 @@
             </div>
         </div>
     </section>
-    <!-- Testimonials section-->
+    
+    {{-- <!-- Testimonials section-->
     <section class="py-5 border-bottom" id="informasi">
         <div class="container px-5 my-5 px-5">
             <div class="text-center mb-5">
@@ -303,15 +295,15 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Contact section-->
     <section class="bg-light py-5" id="kontak">
         <div class="container px-5 my-5 px-5">
             <div class="text-center mb-5">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i>
-                </div>
-                <h2 class="fw-bolder">Get in touch</h2>
-                <p class="lead mb-0">We'd love to hear from you</p>
+                {{-- <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i>
+                </div> --}}
+                <h2 class="fw-bolder">Kontak</h2>
+                <p class="lead mb-0">Silahkan kontak kami di kolom bawah ini</p>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
@@ -327,32 +319,31 @@
                         <div class="form-floating mb-3">
                             <input class="form-control" id="name" type="text" placeholder="Enter your name..."
                                 data-sb-validations="required" />
-                            <label for="name">Full name</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            <label for="name">Nama Lengkap</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">Nama wajib diisi.</div>
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="email" type="email" placeholder="name@example.com"
                                 data-sb-validations="required,email" />
-                            <label for="email">Email address</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.
+                            <label for="email">Email</label>
+                            <div class="invalid-feedback" data-sb-feedback="email:required">Email wajib diisi.
                             </div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            {{-- <div class="invalid-feedback" data-sb-feedback="email:email">Email tidak valid.</div> --}}
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
                             <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
                                 data-sb-validations="required" />
-                            <label for="phone">Phone number</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
-                                required.</div>
+                            <label for="phone">Nomor Telepon</label>
+                            <div class="invalid-feedback" data-sb-feedback="phone:required">Nomor telepon wajib diisi.</div>
                         </div>
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
                                 style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">Message</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
+                            <label for="message">Pesan</label>
+                            <div class="invalid-feedback" data-sb-feedback="message:required">Pesan wajib diisi.
                             </div>
                         </div>
                         <!-- Submit success message-->
@@ -361,7 +352,7 @@
                         <!-- has successfully submitted-->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
+                                <div class="fw-bolder">Pengiriman formulir berhasil!</div>
                                 To activate this form, sign up at
                                 <br />
                                 <a
@@ -373,11 +364,11 @@
                         <!-- This is what your users will see when there is-->
                         <!-- an error submitting the form-->
                         <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
+                            <div class="text-center text-danger mb-3">Terjadi kesalahan saat mengirim pesan!</div>
                         </div>
                         <!-- Submit Button-->
                         <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                type="submit">Submit</button></div>
+                                type="submit">Kirim</button></div>
                     </form>
                 </div>
             </div>

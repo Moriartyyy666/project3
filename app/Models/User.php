@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models;
 
 class User extends Authenticatable
 {
@@ -19,17 +20,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        self::COLUMN_NAME,
-        self::COLUMN_EMAIL,
-        self::COLUMN_PASSWORD,
-        self::COLUMN_ROLE_ID,
+        'name',
+        'email',
+        'password',
+        'role_id',
     ];
-
-    // Define constants for table columns
-    public const COLUMN_NAME = 'name';
-    public const COLUMN_EMAIL = 'email';
-    public const COLUMN_PASSWORD = 'password';
-    public const COLUMN_ROLE_ID = 'role_id';
 
     /**
      * The attributes that should be hidden for serialization.
